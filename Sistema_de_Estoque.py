@@ -3,6 +3,8 @@ produtos = [
     [145, "Motor Parcial Man", 23, "Setor - 04"],
     [325, "Conjunto Filtro de Ar", 100, "Setor - 01"],
     [567, "Filtro de Combustível", 98, "Setor - 07"],
+    [389, "Combustível", 1, "Setor - 12"],
+    [101, "Martelo", 2, "Setor - 14"],
 ]
 
 def adicionar_produto():  #Função de Adicionar Produtos
@@ -43,6 +45,7 @@ def atualizar_produto(): #Função para Atualizar a Quantidade do Produto, busca
             produtos[i][2] = nova_Qtd 
             print("\nQuantidade atualizada com sucesso!")
             print(f"A nova quantidade do Produto {produtos[i][1]} é: {nova_Qtd}")
+            break
     else:
         print("\nO Produto não foi encontrado!")
     travar_menu()
@@ -53,10 +56,9 @@ def travar_menu(): #Função para Travar o Menu
 def estoque_minimo():
     for linha in produtos:
         if linha[2] < 5:
-            print(f"\nAlerta!! O(s) Produto(s) {linha}, está(ão) com baixa quantidade {linha[2]}")
-            break
-    else:
-        print("\nTodos os produtos estão em quantidade maior que 5. Prossiga com o Sistema...")
+            print(f"Alerta!! O(s) Produto(s) {linha}, está(ão) com baixa quantidade {linha[2]}")
+
+    print("\nTodos os produtos estão em quantidade maior que 5. Prossiga com o Sistema...")
     travar_menu()
 
 print("\n----> Bem Vindo ao Menu Interativo do Sistema de Controle de Estoque Simplificado (SCES)! Por Favor, selecione uma opção: ")
