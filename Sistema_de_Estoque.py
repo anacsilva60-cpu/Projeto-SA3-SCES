@@ -50,9 +50,18 @@ def atualizar_produto(): #Função para Atualizar a Quantidade do Produto, busca
 def travar_menu(): #Função para Travar o Menu
     input("\nPrecione <ENTER> para continuar... ")
 
+def estoque_minimo():
+    for linha in produtos:
+        if linha[2] < 5:
+            print(f"\nAlerta!! O(s) Produto(s) {linha}, está(ão) com baixa quantidade {linha[2]}")
+            break
+    else:
+        print("\nTodos os produtos estão em quantidade maior que 5. Prossiga com o Sistema...")
+    travar_menu()
+
 print("\n----> Bem Vindo ao Menu Interativo do Sistema de Controle de Estoque Simplificado (SCES)! Por Favor, selecione uma opção: ")
 while True: ##Loop que faz funcionar o sistema de escolha do menu
-    print("\n1- Mostrar Status do Estoque | 2- Adicionar Produtos no Estoque | 3- Buscar Produto por ID | 4- Atualizar Quantidade do Produto | 5- Sair do Menu ")
+    print("\n1- Mostrar Status do Estoque | 2- Adicionar Produtos no Estoque | 3- Buscar Produto por ID | 4- Atualizar Quantidade do Produto | 5- Verificar Quantidade de Produtos no Estoque |  6- Sair do Menu ")
     opção = input("Escolha: ")
     if(opção == "1"):
         listar_produtos()
@@ -63,5 +72,7 @@ while True: ##Loop que faz funcionar o sistema de escolha do menu
     elif(opção == "4"):
         atualizar_produto()
     elif(opção == "5"):
-        print("\nSaindo...")
+        estoque_minimo()
+    elif(opção == "6"):
+        print("\nSaindo...\n")
         break
