@@ -1,5 +1,5 @@
 # *Sistema de Controle de Estoque Simplificado (SCES)*
-## ~Controle de saída e entrada de almoxarifados.~ 
+## Controle de saída e entrada de almoxarifados. 
 
 O Sistema de Controle de Estoque Simplificado (SCES), é um programa de computador feito para ajudar a organizar as mercadorias de um negócio de forma totalmente digital. Ele funciona como uma lista inteligente que roda direto na tela do computador, substituindo os cadernos de papel e as anotações que se perdem facilmente. 
 O objetivo principal do sistema é garantir que você nunca mais se perca nas contas do que tem guardado no depósito. Com ele, fica muito fácil saber o nome do produto, o código de identificação (ID), a quantidade exata de cada produto, além de registrar em qual setor cada item está localizado (Setor - n°). 
