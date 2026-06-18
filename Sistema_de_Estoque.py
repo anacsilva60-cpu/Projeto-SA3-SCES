@@ -25,10 +25,11 @@ def buscar_produto(): #Função para buscar o produto pelo ID
     buscar_id = int(input("\nDigite o ID do produto para encontrá-lo: "))
     for linha in produtos:
         if buscar_id == linha[0]:
-            print(f"\nO Produto procurado é: {linha[0]}")
+            print(f"\nO Produto procurado é: {linha}")
+            break
     else:
         print("\nO seu produto não contém no estoque!")
-        print("Adicione um produto para pracurá-lo!!")
+        print("Adicione um produto para procurá-lo!!")
     travar_menu()
 
 def atualizar_produto(): #Função para Atualizar a Quantidade do Produto, buscando pelo ID
