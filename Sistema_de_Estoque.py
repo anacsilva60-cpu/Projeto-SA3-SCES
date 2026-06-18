@@ -1,40 +1,57 @@
 produtos = [
-    [100, "Volante", 34, "Setor - 01"],
+    [213, "Volante", 56, "Setor - 09"],
+    [145, "Motor Parcial Man", 23, "Setor - 04"],
+    [325, "Conjunto Filtro de Ar", 100, "Setor - 01"],
+    [567, "Filtro de Combustível", 98, "Setor - 07"],
 ]
 
-def adicionar_produto():
+def adicionar_produto():  #Função de Adicionar Produtos
     global produtos
-    id_item = int(input("Digite o ID do produto: "))
+    id_item = int(input("\nDigite o ID do produto: "))
     nome = input("Digite o nome do produto: ")
     qtd = int(input("Digite a quantidade de produto que tem no estoque: "))
-    local = input("Digite o localização do produto: ")
+    local = input("Digite o localização do produto em Setor (ex: Setor - n°): ")
     produtos.append([id_item, nome, qtd, local])
     travar_menu()
 
 
-def listar_produtos():
+def listar_produtos(): #Função para listar produtos
     for linha in produtos:
         print(linha)
     travar_menu()
 
-def buscar_produto():
+def buscar_produto(): #Função para buscar o produto pelo ID
     global produtos
-    buscar_id = int(input("Digite o ID do produto para encontrá-lo: "))
-    for produto in produtos:
-        if produto == buscar_id:
-            print("A")
-        else:
-            print("O seu produto não contém no estoque!")
-            print("Adicione um produto para pracurá-lo!!")
+    buscar_id = int(input("\nDigite o ID do produto para encontrá-lo: "))
+    for linha in produtos:
+        if buscar_id == linha[0]:
+            print(f"\nO Produto procurado é: {linha[0]}")
+    else:
+        print("\nO seu produto não contém no estoque!")
+        print("Adicione um produto para pracurá-lo!!")
+    travar_menu()
 
-buscar_produto()
+def atualizar_produto(): #Função para Atualizar a Quantidade do Produto, buscando pelo ID
+    global produtos
+    alterar_Qtd = int(input("\nQual o ID do produto que quer atualizar?: "))
+    for i in range(len(produtos)):
+        if(produtos[i][0] == alterar_Qtd):
+            linha_procurada = i
+            print(f"\nO Produto procurado é: {produtos[i][1]}, com quantidade atual de: {produtos[i][2]}")
+            nova_Qtd = int(input("Digite a nova quantidade do produto: "))
+            produtos[i][2] = nova_Qtd 
+            print("\nQuantidade atualizada com sucesso!")
+            print(f"A nova quantidade do Produto {produtos[i][1]} é: {nova_Qtd}")
+    else:
+        print("\nO Produto não foi encontrado!")
+    travar_menu()
 
-def travar_menu():
+def travar_menu(): #Função para Travar o Menu
     input("\nPrecione <ENTER> para continuar... ")
 
 print("\n----> Bem Vindo ao Menu Interativo do Sistema de Estoque! Por Favor, selecione uma opção: ")
-while True: 
-    print("\n1- Mostrar Status do Estoque | 2- Adicionar Produtos no Estoque | 3- Buscar Produto por ID ")
+while True: ##Loop que faz funcionar o sistema de escolha do menu
+    print("\n1- Mostrar Status do Estoque | 2- Adicionar Produtos no Estoque | 3- Buscar Produto por ID | 4- Atualizar Quantidade do Produto | 5- Sair do Menu ")
     opção = input("Escolha: ")
     if(opção == "1"):
         listar_produtos()
@@ -42,3 +59,8 @@ while True:
         adicionar_produto()
     elif(opção == "3"):
         buscar_produto()
+    elif(opção == "4"):
+        atualizar_produto()
+    elif(opção == "5"):
+        print("\nSaindo...")
+        break
