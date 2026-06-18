@@ -50,7 +50,7 @@ def atualizar_produto(): #Função para Atualizar a Quantidade do Produto, busca
 def travar_menu(): #Função para Travar o Menu
     input("\nPrecione <ENTER> para continuar... ")
 
-print("\n----> Bem Vindo ao Menu Interativo do Sistema de Estoque! Por Favor, selecione uma opção: ")
+print("\n----> Bem Vindo ao Menu Interativo do Sistema de Controle de Estoque Simplificado (SCES)! Por Favor, selecione uma opção: ")
 while True: ##Loop que faz funcionar o sistema de escolha do menu
     print("\n1- Mostrar Status do Estoque | 2- Adicionar Produtos no Estoque | 3- Buscar Produto por ID | 4- Atualizar Quantidade do Produto | 5- Sair do Menu ")
     opção = input("Escolha: ")
