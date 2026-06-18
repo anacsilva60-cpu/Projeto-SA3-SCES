@@ -57,8 +57,8 @@ def estoque_minimo():
     for linha in produtos:
         if linha[2] < 5:
             print(f"Alerta!! O(s) Produto(s) {linha}, está(ão) com baixa quantidade {linha[2]}")
-            
-    print("\nTodos os produtos estão em quantidade maior que 5. Prossiga com o Sistema...")
+
+    print("\nTodos os produtos estão em quantidade maior que 5. Prossiga com o Sistema..")
     travar_menu()
 
 print("\n----> Bem Vindo ao Menu Interativo do Sistema de Controle de Estoque Simplificado (SCES)! Por Favor, selecione uma opção: ")
